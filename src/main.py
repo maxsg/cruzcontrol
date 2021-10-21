@@ -10,5 +10,4 @@ def home():
     return tweets
 
 if __name__ == "__main__":
-    #We now use this syntax to server our app. 
-    serve(app, host='0.0.0.0', port=3000)
+    serve(app, host='0.0.0.0', port=5000)
