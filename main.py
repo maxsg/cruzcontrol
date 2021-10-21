@@ -1,5 +1,5 @@
 from flask import Flask
-from .services.twitter.twitter import get_tweets
+from services.twitter.twitter import get_tweets
 
 app = Flask(__name__)
 
