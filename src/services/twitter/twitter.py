@@ -42,17 +42,17 @@ def get_tweets():
     # Construct query
     base_url = 'https://api.twitter.com'
     endpoint = f'/2/users/{TED_CRUZ_USER_ID}/tweets'
-    url = base_url + endpoint
+    query_params = '?tweet.fields=created_at,public_metrics'
+    url = base_url + endpoint + query_params
+    # print(url)
 
     # Perform query
     resp = requests.get(url=url, headers={'Authorization': F'Bearer {BEARER_TOKEN}'})
 
     # Process results
+    print(resp)
     json_data = resp.json()
-    # print(json_data)
-    # data = json.loads(json_data)
     print(json_data)
-    print(type(json_data))
     tweets = [tweet['text'] for tweet in json_data['data']]
     results = json.dumps(tweets)
 
